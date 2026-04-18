@@ -41,3 +41,5 @@ You can select multiple files and convert them all at once.
 ## Configuration
 
 Adjust Vorbis quality (0–10) under **Editor > Editor Settings > Oggd > Vorbis Quality**. Higher values mean better quality and larger files. Default is 6.
+
+![Oggd settings location](assets/image/oggd_settings_1.png "Editor > Editor Settings > Oggd > Vorbis Quality")

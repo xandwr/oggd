@@ -1,5 +1,7 @@
 # oggd
 
+![oggd](assets/image/oggd_1.png)
+
 A Godot 4 editor plugin that adds right-click conversion of audio files to OGG Vorbis directly from the FileSystem dock.
 
 ## Requirements

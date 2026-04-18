@@ -11,22 +11,17 @@ func _enter_tree() -> void:
 
 func _check_ffmpeg() -> void:
 	var found: bool = not OggdConverter.find_ffmpeg().is_empty()
-	var dialog := AcceptDialog.new()
-	dialog.exclusive = false
-	EditorInterface.get_base_control().add_child(dialog)
 	if found:
-		dialog.title = "oggd"
-		dialog.dialog_text = "ffmpeg found, oggd is ready. enjoy!\n-xandwr"
-		dialog.confirmed.connect(dialog.queue_free)
-		dialog.canceled.connect(dialog.queue_free)
-		dialog.popup_centered()
 		_context_menu = OggdContextMenu.new()
 		add_context_menu_plugin(EditorContextMenuPlugin.CONTEXT_SLOT_FILESYSTEM, _context_menu)
 	else:
+		var dialog := AcceptDialog.new()
+		dialog.exclusive = false
 		dialog.title = "oggd"
 		dialog.dialog_text = "ffmpeg not found in PATH: disabling oggd.\n\nInstall ffmpeg and ensure it is accessible from your system PATH."
 		dialog.confirmed.connect(_disable_self.bind(dialog))
 		dialog.canceled.connect(_disable_self.bind(dialog))
+		EditorInterface.get_base_control().add_child(dialog)
 		dialog.popup_centered()
 
 

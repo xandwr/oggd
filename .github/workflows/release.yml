@@ -29,8 +29,5 @@ jobs:
           COMMIT=$(git rev-parse HEAD)
           gh release create ${{ github.event.inputs.version }} \
             --title "oggd ${{ github.event.inputs.version }}" \
-            --notes "## Godot Asset Library
-
-          **Download commit:** \`${COMMIT}\`
-
-          Paste this commit hash into the _Download Commit_ field when submitting or updating on the Godot Asset Library."
+            --notes "
+          **Download commit:** \`${COMMIT}\`"
